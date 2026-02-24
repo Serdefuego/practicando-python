@@ -1,17 +1,24 @@
-cantidad=int(input("ingrese cantidad de familias a confeccionar"))
-familias=[]
-engendros=[]
+cantidad = int(input("Ingrese cantidad de familias: "))
+familias = []
+engendros = []
+
 for i in range(cantidad):
-    padre=input("ingrese nombre de padre")
-    madre=input("ingrese nombre de madre")
-    familias.append([padre,madre])
+    padre = input("Ingrese nombre del padre: ")
+    madre = input("Ingrese nombre de la madre: ")
 
+    familias.append([padre, madre])
 
-for x in range(len(familias)):
-       cantidadDHijos=int(input("ingrese cant de hijos"))
-       for j in range(cantidadDHijos):
-        engendros.append([])
-        nombre=input("ingrese nombre de hijx")
-        engendros[j].append(nombre)
+    cantidad_hijos = int(input("Ingrese cantidad de hijos: "))
+    hijos = []
+
+    for j in range(cantidad_hijos):
+        nombre_hijo = input("Ingrese nombre del hijo/a: ")
+        hijos.append(nombre_hijo)
+
+    engendros.append(hijos)
+
+print("Familias:")
 print(familias)
+
+print("Hijos por familia:")
 print(engendros)
