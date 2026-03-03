@@ -13,9 +13,20 @@ while condicion == "si":
 
 def imprimir(arreglo):
     for persona in arreglo:
-        # Para cada diccionario, obtenemos su única clave
+     
         for clave in persona.keys():
             datos = persona[clave]
             print(f"Clave: {clave}, Nombre: {datos[0]}, Ocupación: {datos[1]}, Sueldo: {datos[2]}")
 
+imprimir(usuarios)
+
+def modificar(arreglo):
+    buscado=input("ingrese clave")
+
+    for persona in arreglo:
+        if (persona[clave]==buscado):
+            persona[0]=input("ingrese nombre modificado")
+            persona[1]=input("ingrese ocupacion")
+            persona[2]=input("sueldo")
+modificar(usuarios)
 imprimir(usuarios)
