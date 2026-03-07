@@ -21,12 +21,15 @@ def imprimir(arreglo):
 imprimir(usuarios)
 
 def modificar(arreglo):
-    buscado=input("ingrese clave")
-
+    buscado = input("Ingrese clave a modificar: ")
     for persona in arreglo:
-        if (persona[clave]==buscado):
-            persona[0]=input("ingrese nombre modificado")
-            persona[1]=input("ingrese ocupacion")
-            persona[2]=input("sueldo")
+        if buscado in persona:
+            persona[buscado][0] = input("Ingrese nombre modificado: ")
+            persona[buscado][1] = input("Ingrese ocupacion modificada: ")
+            persona[buscado][2] = input("Ingrese sueldo modificado: ")
+            print("Empleado modificado correctamente.")
+            return
+    print("Clave no encontrada.")
+
 modificar(usuarios)
 imprimir(usuarios)

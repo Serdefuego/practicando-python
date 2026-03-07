@@ -10,7 +10,7 @@ Busca por clave y muestra los datos '''
 usuarios=[]
 def persona():
     diccionario={}
-    diccionario["clave"]=int(input("ingrese edad"))
+    diccionario["clave"]=int(input("ingrese clave"))
     diccionario["nombre"]=input("ingrese nombre")
     diccionario["sueldo"]=float(input("ingrese sueldo"))
     usuarios.append(diccionario)

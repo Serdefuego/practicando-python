@@ -1,50 +1,76 @@
-arreglo=[]
-def menu ():
-    seleccione=input("ingrese 1 para cargar empleado /" \
-                    "2 imprimir" \
-                    "3 para modificar empleado" \
-                    "4 para eliminar empleado" \
-                    "5 para salir")
-    if seleccione=="1":
-        cargar(arreglo)
-    elif seleccione=="2":
-        imprimir(arreglo)
-    elif seleccione=="3":
-        modificar(arreglo)
-    elif seleccione=="4":
-        eliminar(arreglo):
-    elif seleccione=="5":
-        salir()
+arreglo = []
+
+def menu():
+    while True:
+        seleccione = input(
+            "\nIngrese:\n"
+            "1 - Cargar empleado\n"
+            "2 - Imprimir empleados\n"
+            "3 - Modificar empleado\n"
+            "4 - Eliminar empleado\n"
+            "5 - Salir\n"
+        )
+
+        if seleccione == "1":
+            cargar(arreglo)
+        elif seleccione == "2":
+            imprimir(arreglo)
+        elif seleccione == "3":
+            modificar(arreglo)
+        elif seleccione == "4":
+            eliminar(arreglo)
+        elif seleccione == "5":
+            salir()
+            break
+        else:
+            print("Opción inválida")
+
 
 def cargar(arreglo):
-    cantidad=int(input("ingrese cantidad de empleados a subir"))
+    cantidad = int(input("Ingrese cantidad de empleados a subir: "))
     for i in range(cantidad):
-        diccionario={}
-        diccionario["edad"]=input("ingrese edad")
-        diccionario["nombre"]=input("ingrese nombre")
-        diccionario["sueldo"]=input("ingrese sueldo")
+        diccionario = {}
+        diccionario["edad"] = input("Ingrese edad: ")
+        diccionario["nombre"] = input("Ingrese nombre: ")
+        diccionario["sueldo"] = input("Ingrese sueldo: ")
         arreglo.append(diccionario)
-    menu()
+
 
 def imprimir(arreglo):
-    for elemento in arreglo:
-        print("edad:",elemento["edad"],"nombre",elemento["nombre"],"sueldo",elemento["sueldo"])
-    menu()
+    if not arreglo:
+        print("No hay empleados cargados.")
+    else:
+        for elemento in arreglo:
+            print("Edad:", elemento["edad"],
+                  "Nombre:", elemento["nombre"],
+                  "Sueldo:", elemento["sueldo"])
 
 
-        
 def modificar(arreglo):
-    buscar=input("ingrese persona a modificar")
-
+    buscar = input("Ingrese nombre de la persona a modificar: ")
     for personas in arreglo:
-        if personas["nombre"]==buscar:
-            personas["edad"]=input("ingrese edad")
-            personas["nombre"]=input("ingrese nombre")
-            personas["sueldo"]=input("ingrese sueldo")
-    menu()
+        if personas["nombre"] == buscar:
+            personas["edad"] = input("Ingrese nueva edad: ")
+            personas["nombre"] = input("Ingrese nuevo nombre: ")
+            personas["sueldo"] = input("Ingrese nuevo sueldo: ")
+            print("Empleado modificado correctamente.")
+            return
+    print("Empleado no encontrado.")
 
+
+def eliminar(arreglo):
+    buscar = input("Ingrese nombre de la persona a eliminar: ")
+    for i in range(len(arreglo)):
+        if arreglo[i]["nombre"] == buscar:
+            arreglo.pop(i)
+            print("Empleado eliminado correctamente.")
+            return
+    print("Empleado no encontrado.")
 
 
 def salir():
-        print("gracias por utilizar el programa")
+    print("Gracias por utilizar el programa")
 
+
+# Ejecutar programa
+menu()
