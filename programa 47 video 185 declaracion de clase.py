@@ -3,7 +3,8 @@ class Persona:
         self.nombre=nom
     
     def imprimir(self):
-        print("mi nombre es",self.nombre)
+        print("hola mi nombre es",self.nombre)
+    
 
 Persona=Persona()
 Persona.inicializar("marcos")
