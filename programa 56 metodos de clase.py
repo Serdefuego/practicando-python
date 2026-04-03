@@ -1,19 +1,24 @@
-arregloDeAlumno=[]
+arregloDeAlumno = []
 
 class Alumnos:
-     def __init__(self):
-        self.nombre=input("ingrese nombre")
-        self.notas=[]
-        self.cargarNota(self.notas)
-        
-        def cargarNota(arreglo):
-            for i in range(3):
-                nota=int(input("ingrse nota"))
-                arreglo.append(nota)
+    def __init__(self):
+        self.nombre = input("Ingrese nombre: ")
+        self.notas = []
+        self.cargarNota()
 
-for i in range (2):
-    alumno=Alumnos
+    def cargarNota(self):
+        for i in range(3):
+            nota = int(input("Ingrese nota: "))
+            self.notas.append(nota)
+
+# Cargar alumnos
+for i in range(2):
+    alumno = Alumnos()
     arregloDeAlumno.append(alumno)
 
-
-
+# Mostrar alumnos con notas >= 7
+for persona in arregloDeAlumno:
+    for nota in persona.notas:
+        if nota >= 7:
+            print(persona.nombre)
+            break  # para no repetir el nombre varias veces
